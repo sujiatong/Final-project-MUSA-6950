@@ -13,7 +13,9 @@ The project aims to create a clean, lightweight prototype that highlights the po
 
 To obtain the API key, navigate to https://platform.openai.com/account/api-keys.
 
+### Limitation
 - The free usage limit of the OpenAI API was not sufficient for this project, so I spent around $20 to access additional API credits and complete the assignment.
+- Access to the OpenAI API may be blocked on certain restricted networks (e.g., school Wi-Fi), requiring workarounds like VPNs or mobile hotspots.
 
 
 ## Sentiment Analysis
