@@ -1,4 +1,7 @@
+
+
 # Final project- MUSA 6950
+
 
 ## What is LLMs?
 
@@ -188,9 +191,8 @@ The model generates descriptive texts for the images that summarize the main vis
 
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg" width="120" height="120"/>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/June_odd-eyed-cat.jpg" width="120" height="120"/>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg" width="120" height="120"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Pearl_Street_and_Wall_Street%2C_Manhattan%2C_New_York.jpg/640px-Pearl_Street_and_Wall_Street%2C_Manhattan%2C_New_York.jpg" width="120" height="120"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/At_New_York_City_2023_033.jpg/640px-At_New_York_City_2023_033.jpg" width="120" height="120"/>
 </p>
 
 ### Load Images from URLs
@@ -198,9 +200,8 @@ The model generates descriptive texts for the images that summarize the main vis
 from llama_index.llms.openai import OpenAI
 
 image_urls = [
-    "https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/a/a3/June_odd-eyed-cat.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Pearl_Street_and_Wall_Street%2C_Manhattan%2C_New_York.jpg/640px-Pearl_Street_and_Wall_Street%2C_Manhattan%2C_New_York.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/At_New_York_City_2023_033.jpg/640px-At_New_York_City_2023_033.jpg",
 ]
 
 openai_llm = OpenAI(model="gpt-4o", max_new_tokens=300)
@@ -216,7 +217,7 @@ img = Image.open(BytesIO(img_response.content))
 plt.imshow(img)
 ```
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg" width="200" height="200"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/At_New_York_City_2023_033.jpg/640px-At_New_York_City_2023_033.jpg" width="200" height="200"/>
 
 
 ### Ask the model to describe what it sees
@@ -253,6 +254,6 @@ async for delta in async_resp:
     print(delta.delta, end="")
 ```
 
-`1. A close-up of an orange tabby cat with striking amber eyes, looking directly at the camera. The background is blurred, highlighting the cat's face and whiskers.`
+`1. A narrow city street lined with tall buildings on both sides. The road has "STOP" painted on it, and there are a few pedestrians walking on the sidewalk. Several cars are parked along the street, and American flags are visible on the right side.`
 
-`2. A white cat with heterochromia, featuring one yellow eye and one blue eye. The cat is lying on a soft, multicolored blanket, with a focused and curious expression.`
+`2. A wide city street with tall brick buildings on both sides. The street is busy with cars and pedestrians, and the sky is overcast with clouds. The buildings have multiple stories, and the street is lined with trees and traffic lights.`
