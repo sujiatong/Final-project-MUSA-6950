@@ -152,7 +152,16 @@ else:
 `Positive
 😊`
 
-## image-related reasoning
+## Image-related Reasoning
+
+In this section, a Large Language Model (LLM) is applied to perform basic image-related reasoning.  
+The model generates descriptive texts for the images that summarize the main visual elements, highlighting the potential of LLMs in assisting simple visual understanding tasks through language.
+
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg" width="120" height="120"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/June_odd-eyed-cat.jpg" width="120" height="120"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg" width="120" height="120"/>
+</p>
 
 ### Load Images from URLs
 ```Python
@@ -177,7 +186,8 @@ img = Image.open(BytesIO(img_response.content))
 plt.imshow(img)
 ```
 
-![Sample Cat Image](https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg)
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg" width="200" height="200"/>
+
 
 ### Ask the model to describe what it sees
 
@@ -206,7 +216,7 @@ print(response)
 `assistant: 1. A close-up of an orange tabby cat with striking amber eyes, looking directly at the camera. The background is blurred, with a hint of a red object.`
 `2. A white cat with heterochromia, featuring one yellow eye and one blue eye. The cat is lying on a textured blanket with blue and beige colors, and the background is softly blurred.`
 
-We can also stream the model response asynchronously
+#### We can also stream the model response asynchronously
 ```Python
 async_resp = await openai_llm.astream_chat(messages=[msg])
 async for delta in async_resp:
