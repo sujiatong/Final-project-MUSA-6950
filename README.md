@@ -39,7 +39,7 @@ print(response.choices[0].message.content)
 Hello! How can I assist you today?
 `
 
-Say **How are you**
+Say **I Love U**
 
 ``` Python
 response = client.chat.completions.create(
@@ -100,15 +100,16 @@ input_text = "The weather today is quite pleasant. It's sunny with a gentle bree
 result = generate_summary_and_sentiment(input_text, api_key)
 print(result)
 ```
-`{'summary': 'The weather today is pleasant with sun and a gentle breeze, ideal for a stroll in the park.', 'sentiment': 'The sentiment of the text is positive. The author describes the weather as pleasant, sunny, and perfect for a walk in the park. There is a sense of enjoyment and contentment conveyed in the text. Overall, the sentiment is optimistic and happy.'}
+`{'summary': 'The weather today is pleasant with sun and a gentle breeze, ideal for a stroll in the park.', 'sentiment': 'The sentiment of the text is positive. 
+The author describes the weather as pleasant, sunny, and perfect for a walk in the park. There is a sense of enjoyment and contentment conveyed in the text. Overall, the sentiment is optimistic and happy.'}
 `
 
 ### Use the Sentiment Score in Your Code¶
 
-When you put **damm final week**:
+When you put **Damn, final week!**:
 ```Python
 
-text = "damm final week"
+text = "Damn, final week!"
 
 prompt = {
     "role": "user",
@@ -140,7 +141,7 @@ else:
 When you input the text **happy graduate**
 ```Python
 
-text = "happy graduate"
+text = "Happy Graduate"
 
 sentiment = response.choices[0].message.content
 print(sentiment)
