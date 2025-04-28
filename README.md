@@ -19,6 +19,7 @@ To obtain the API key, navigate to https://platform.openai.com/account/api-keys.
 
 
 ## Sentiment Analysis
+This section analyze the sentiment of given text inputs via using GPT-3.5-turbo.
 
 ### Send a message to the GPT-3.5-turbo model.
 #### Say **Hi** 
