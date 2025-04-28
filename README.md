@@ -1,15 +1,31 @@
 # Final project- MUSA 6950
+
+## What is LLMs?
+
+Large Language Models (LLMs) are advanced artificial intelligence systems designed to understand, generate, and manipulate human language on a large scale.
+
+  <img src="https://pixelplex.io/wp-content/uploads/2024/01/llm-applications-main.jpg" width="350" height="200"/>
+
+ <img src="https://pixelplex.io/wp-content/uploads/2024/01/10-most-popular-applications-of-large-language-models.jpg" width="450" height="300"/>
+
+## Project summary
 This project mainly following those following website instruction, utilizing a Large Language Model(LLM) for Sentiment Analyzing and image reasoning.
 
 - [Use ChatGPT API for Sentiment Analysis in Python](https://medium.com/@financial_python/use-chatgpt-api-for-sentiment-analysis-in-python-5a152ddb3238)
 - [Using OpenAI GPT-4V model for image reasoning](https://medium.com/@financial_python/use-chatgpt-api-for-sentiment-analysis-in-python-5a152ddb3238) 
 
-
-The system is designed to demonstrate how LLMs can handle fundamental natural language processing tasks and assist in simple visual interpretation through text.  All functions are implemented through Python in a Jupyter Notebook environment, utilizing the OpenAI API for model interactions.
-
 The project aims to create a clean, lightweight prototype that highlights the potential of LLMs in both text-based and image-related reasoning tasks.
 
-## **Step1:** Obtain API key
+
+## Objectives
+- Build a lightweight system using an LLM (ChatGPT)
+- Implement two key functionalities:
+  - Sentiment analysis of text inputs
+  - Image-based reasoning through textual description
+
+
+# Methodology
+##  Obtain API key
 
 To obtain the API key, navigate to https://platform.openai.com/account/api-keys.
 
