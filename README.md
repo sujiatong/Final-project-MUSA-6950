@@ -24,7 +24,6 @@ The project aims to create a clean, lightweight prototype that highlights the po
   - Image-based reasoning through textual description
 
 
-# Methodology
 ##  Obtain API key
 
 To obtain the API key, navigate to https://platform.openai.com/account/api-keys.
@@ -34,8 +33,14 @@ To obtain the API key, navigate to https://platform.openai.com/account/api-keys.
 - Access to the OpenAI API may be blocked on certain restricted networks (e.g., school Wi-Fi), requiring workarounds like VPNs or mobile hotspots.
 
 
-## Sentiment Analysis
+##  Task 1: Sentiment Analysis
+
 This section analyze the sentiment of given text inputs via using GPT-3.5-turbo.
+
+- The system takes a text input from the user.
+- The text is sent to the LLM with a carefully designed prompt asking the model to analyze its sentiment.
+- The model returns a result classifying the input as positive, negative, or neutral, along with a brief summary.
+
 
 ### Send a message to the GPT-3.5-turbo model.
 #### Say **Hi** 
@@ -120,7 +125,7 @@ print(result)
 The author describes the weather as pleasant, sunny, and perfect for a walk in the park. There is a sense of enjoyment and contentment conveyed in the text. Overall, the sentiment is optimistic and happy.'}
 `
 
-### Use the Sentiment Score in Your Code¶
+### Use the Sentiment Score in Your Code
 
 When you put **Damn, final week!**:
 ```Python
@@ -172,10 +177,15 @@ else:
 `Positive
 😊`
 
-## Image-related Reasoning
+## Task 2: Image-Related Reasoning
 
 In this section, a Large Language Model (LLM) is applied to perform basic image-related reasoning.  
 The model generates descriptive texts for the images that summarize the main visual elements, highlighting the potential of LLMs in assisting simple visual understanding tasks through language.
+
+- Instead of processing raw image data directly, publicly available image URLs are used.
+- Text prompts describing the image URLs are fed into the LLM.
+- The model generates descriptive text based on the imagined content of the images, simulating a simple form of visual reasoning.
+
 
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg" width="120" height="120"/>
