@@ -32,9 +32,9 @@ print(response.choices[0].message.content)
 ```
 ### Receive and print the model’s reply.
 
-```text
+`
 Hello! How can I assist you today?
-```
+`
 ### Other example
 ``` Python
 response = client.chat.completions.create(
@@ -46,9 +46,11 @@ response = client.chat.completions.create(
 
 print(response.choices[0].message.content)
 ```
-```text
-I don't have feelings, but I'm here to assist you. How can I help you today?
-```
+`
+I don't have feelings, but I'm here to assist you. How can I help you today?`
+
+
+
 
 ### Function to generate summary and sentiment analysis
 
