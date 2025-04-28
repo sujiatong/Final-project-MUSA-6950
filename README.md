@@ -46,7 +46,7 @@ response = client.chat.completions.create(
 
 print(response.choices[0].message.content)
 ```
-```
+```text
 I don't have feelings, but I'm here to assist you. How can I help you today?
 ```
 
