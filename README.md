@@ -7,10 +7,14 @@
 
 Large Language Models (LLMs) are advanced artificial intelligence systems designed to understand, generate, and manipulate human language on a large scale.
 
+Using LLMs, we can analyze how people feel about different street views in New York City, linking emotions to urban space design.
+
+
   <img src="https://pixelplex.io/wp-content/uploads/2024/01/llm-applications-main.jpg" width="350" height="200"/>
 
  <img src="https://pixelplex.io/wp-content/uploads/2024/01/10-most-popular-applications-of-large-language-models.jpg" width="450" height="300"/>
 
+--- 
 ## Project summary
 This project mainly following those following website instruction, utilizing a Large Language Model(LLM) for Sentiment Analyzing and image reasoning.
 
@@ -18,6 +22,11 @@ This project mainly following those following website instruction, utilizing a L
 - [Using OpenAI GPT-4V model for image reasoning](https://medium.com/@financial_python/use-chatgpt-api-for-sentiment-analysis-in-python-5a152ddb3238) 
 
 The project aims to create a clean, lightweight prototype that highlights the potential of LLMs in both text-based and image-related reasoning tasks.
+
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Pearl_Street_and_Wall_Street%2C_Manhattan%2C_New_York.jpg/640px-Pearl_Street_and_Wall_Street%2C_Manhattan%2C_New_York.jpg" width="220" height="220"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/At_New_York_City_2023_033.jpg/640px-At_New_York_City_2023_033.jpg" width="220" height="220"/>
+</p>
 
 
 ## Objectives
@@ -43,43 +52,6 @@ This section analyze the sentiment of given text inputs via using GPT-3.5-turbo.
 - The system takes a text input from the user.
 - The text is sent to the LLM with a carefully designed prompt asking the model to analyze its sentiment.
 - The model returns a result classifying the input as positive, negative, or neutral, along with a brief summary.
-
-
-### Send a message to the GPT-3.5-turbo model.
-#### Say **Hi** 
-```python
-response = client.chat.completions.create(
-    model="gpt-3.5-turbo",
-    messages=[
-        {"role": "user", "content": "Hi"}
-    ]
-)
-
-print(response.choices[0].message.content)
-
-```
-
-`
-Hello! How can I assist you today?
-`
-
-Say **I Love U**
-
-``` Python
-response = client.chat.completions.create(
-    model="gpt-3.5-turbo",
-    messages=[
-        {"role": "user", "content": "I love U"}
-    ]
-)
-
-print(response.choices[0].message.content)
-```
-`
-Thank you! I appreciate the kind words.
-`
-
-Feel free to try input other text to Chat the model 😊 ~
 
 
 ### Function to generate summary and sentiment analysis
@@ -119,53 +91,27 @@ def generate_summary_and_sentiment(input_text, api_key, max_tokens=50):
     return {'summary': summary, 'sentiment': sentiment}
 ```
 #### Example usage
-```Python
-input_text = "The weather today is quite pleasant. It's sunny with a gentle breeze, perfect for a walk in the park."
+
+Writing my feeling of the first image. I think that makes me streetful.
+
+```python
+input_text = "This street feels narrow, busy, a bit stressful with tall buildings surrounding the pedestrians"
 result = generate_summary_and_sentiment(input_text, api_key)
 print(result)
+
 ```
-`{'summary': 'The weather today is pleasant with sun and a gentle breeze, ideal for a stroll in the park.', 'sentiment': 'The sentiment of the text is positive. 
-The author describes the weather as pleasant, sunny, and perfect for a walk in the park. There is a sense of enjoyment and contentment conveyed in the text. Overall, the sentiment is optimistic and happy.'}
+
 `
+{'summary': 'The street is narrow and busy with tall buildings creating a stressful environment for pedestrians.', 'sentiment': 'Overall, the sentiment of the text is negative. Words like "narrow," "busy," "stressful," and "surrounding" evoke a sense of discomfort and unease. The mention of tall buildings further adds to the feeling of being'}
+`
+
+
 
 ### Use the Sentiment Score in Your Code
 
-When you put **Damn, final week!**:
-```Python
-
-text = "Damn, final week!"
-
-prompt = {
-    "role": "user",
-    "content": f"Sentiment analysis of the following text: '{text}'\n\nSentiment score: "
-}
-
-# Use the updated ChatCompletion API
-response = client.chat.completions.create(
-    model="gpt-3.5-turbo",
-    messages=[prompt],
-    temperature=0,
-    max_tokens=2
-)
-
-sentiment = response.choices[0].message.content
-print(sentiment)
-if sentiment == "Positive":
-    print("😊")
-elif sentiment == "Negative":
-    print("😔")
-else:
-    print("😐")
-
 ```
+text =  "This avenue feels open, bright, and lively with wide sidewalks and beautiful views of the sky."
 
-`Negative 😐`
-
-
-When you input the text **happy graduate**
-```Python
-
-text = "Happy Graduate"
 
 sentiment = response.choices[0].message.content
 print(sentiment)
@@ -180,10 +126,12 @@ else:
 `Positive
 😊`
 
-## Task 2: Image-Related Reasoning
 
-In this section, a Large Language Model (LLM) is applied to perform basic image-related reasoning.  
-The model generates descriptive texts for the images that summarize the main visual elements, highlighting the potential of LLMs in assisting simple visual understanding tasks through language.
+## Image-Related Reasoning
+
+In this section, utilizing LLMs performs image related reasoning by the NY street view image.
+
+The model generates descriptive texts for the street view images that summarize the main visual elements, highlighting the potential of LLMs in assisting simple visual understanding tasks through language.
 
 - Instead of processing raw image data directly, publicly available image URLs are used.
 - Text prompts describing the image URLs are fed into the LLM.
@@ -241,13 +189,7 @@ msg = ChatMessage(
 
 response = openai_llm.chat(messages=[msg])
 ```
-```Python
-print(response)
-```
-`assistant: 1. A close-up of an orange tabby cat with striking amber eyes, looking directly at the camera. The background is blurred, with a hint of a red object.`
-`2. A white cat with heterochromia, featuring one yellow eye and one blue eye. The cat is lying on a textured blanket with blue and beige colors, and the background is softly blurred.`
 
-#### We can also stream the model response asynchronously
 ```Python
 async_resp = await openai_llm.astream_chat(messages=[msg])
 async for delta in async_resp:
