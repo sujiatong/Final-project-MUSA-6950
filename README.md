@@ -7,7 +7,6 @@
 
 Large Language Models (LLMs) are advanced artificial intelligence systems designed to understand, generate, and manipulate human language on a large scale.
 
-Using LLMs, we can analyze how people feel about different street views in New York City, linking emotions to urban space design.
 
 
   <img src="https://pixelplex.io/wp-content/uploads/2024/01/llm-applications-main.jpg" width="350" height="200"/>
@@ -17,6 +16,8 @@ Using LLMs, we can analyze how people feel about different street views in New Y
 --- 
 ## Project summary
 This project mainly following those following website instruction, utilizing a Large Language Model(LLM) for Sentiment Analyzing and image reasoning.
+
+Using LLMs, we can analyze how people feel about different street views in New York City, linking emotions to urban space design.
 
 - [Use ChatGPT API for Sentiment Analysis in Python](https://medium.com/@financial_python/use-chatgpt-api-for-sentiment-analysis-in-python-5a152ddb3238)
 - [Using OpenAI GPT-4V model for image reasoning](https://medium.com/@financial_python/use-chatgpt-api-for-sentiment-analysis-in-python-5a152ddb3238) 
@@ -53,6 +54,11 @@ This section analyze the sentiment of given text inputs via using GPT-3.5-turbo.
 - The text is sent to the LLM with a carefully designed prompt asking the model to analyze its sentiment.
 - The model returns a result classifying the input as positive, negative, or neutral, along with a brief summary.
 
+---
+
+- Instead of processing Street View image directly, publicly available image URLs are used.
+- Text prompts describing the Street view image URLs are fed into the LLM.
+- The model generates descriptive text based on the imagined content of the images, simulating a simple form of visual reasoning.
 
 ### Function to generate summary and sentiment analysis
 
@@ -107,7 +113,14 @@ print(result)
 
 
 
+
 ### Use the Sentiment Score in Your Code
+
+- The system takes a text input about description of street view images from the user.
+- The text is sent to the LLM with a carefully designed prompt asking the model to analyze its sentiment.
+- The model returns a result classifying the input as positive, negative, or neutral, along with a brief summary.
+  
+using second image of my feeling description
 
 ```
 text =  "This avenue feels open, bright, and lively with wide sidewalks and beautiful views of the sky."
@@ -137,6 +150,11 @@ The model generates descriptive texts for the street view images that summarize 
 - Text prompts describing the image URLs are fed into the LLM.
 - The model generates descriptive text based on the imagined content of the images, simulating a simple form of visual reasoning.
 
+
+--- 
+- The system takes a text input about description of street view images from the user.
+- The text is sent to the LLM with a carefully designed prompt asking the model to analyze its sentiment.
+- The model returns a result classifying the input as positive, negative, or neutral, along with a brief summary.
 
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Pearl_Street_and_Wall_Street%2C_Manhattan%2C_New_York.jpg/640px-Pearl_Street_and_Wall_Street%2C_Manhattan%2C_New_York.jpg" width="220" height="220"/>
