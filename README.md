@@ -24,6 +24,27 @@
 </details>
 
 
+
+
+- [Final project- MUSA 6950](#final-project--musa-6950)
+  - [Table of Contents](#table-of-contents)
+  - [What is LLMs?](#what-is-llms)
+  - [Project summary](#project-summary)
+  - [Objectives](#objectives)
+  - [Obtain API key](#obtain-api-key)
+    - [Limitation](#limitation)
+  - [Task 1: Sentiment Analysis](#task-1-sentiment-analysis)
+    - [Function to generate summary and sentiment analysis](#function-to-generate-summary-and-sentiment-analysis)
+      - [Example usage](#example-usage)
+    - [Use the Sentiment Score in Your Code](#use-the-sentiment-score-in-your-code)
+  - [Image-Related Reasoning](#image-related-reasoning)
+    - [Load Images from URLs](#load-images-from-urls)
+    - [Ask the model to describe what it sees](#ask-the-model-to-describe-what-it-sees)
+- [Conclusion](#conclusion)
+
+</details>
+
+
 ## What is LLMs?
 
 Large Language Models (LLMs) are advanced artificial intelligence systems designed to understand, generate, and manipulate human language on a large scale.
@@ -37,7 +58,7 @@ This project mainly following those following website instruction, utilizing a L
 Using LLMs, we can analyze how people feel about different street views in New York City, linking emotions to urban space design.
 
 - [Use ChatGPT API for Sentiment Analysis in Python](https://medium.com/@financial_python/use-chatgpt-api-for-sentiment-analysis-in-python-5a152ddb3238)
-- [Using OpenAI GPT-4V model for image reasoning](https://medium.com/@financial_python/use-chatgpt-api-for-sentiment-analysis-in-python-5a152ddb3238) 
+- [Using OpenAI GPT-4V model for image reasoning](https://docs.llamaindex.ai/en/stable/examples/multi_modal/openai_multi_modal/) 
 
 The project aims to create a clean, lightweight prototype that highlights the potential of LLMs in both text-based and image-related reasoning tasks.
 
@@ -62,6 +83,7 @@ To obtain the API key, navigate to https://platform.openai.com/account/api-keys.
 - The free usage limit of the OpenAI API was not sufficient for this project, so I spent around $20 to access additional API credits and complete the assignment.
 - Access to the OpenAI API may be blocked on certain restricted networks (e.g., school Wi-Fi), requiring workarounds like VPNs or mobile hotspots.
 
+---
 
 ##  Task 1: Sentiment Analysis
 
@@ -108,7 +130,7 @@ def generate_summary_and_sentiment(input_text, api_key, max_tokens=50):
 ```
 #### Example usage
 
-Writing my feeling of the first image. I think that makes me streetful.
+Writing about my feelings toward the first image, I think it makes me feel stressed. Then, we can see the sentiment description of the image.
 
 ```python
 input_text = "This street feels narrow, busy, a bit stressful with tall buildings surrounding the pedestrians"
@@ -123,18 +145,24 @@ print(result)
 
 
 
-
 ### Use the Sentiment Score in Your Code
 
 - The system takes a text input about description of street view images from the user.
 - The text is sent to the LLM with a carefully designed prompt asking the model to analyze its sentiment.
 - The model returns a result classifying the input as positive, negative, or neutral, along with a brief summary.
   
-using second image of my feeling description
+Using the second image to express my positive feelings, the output shows `Positive 😊`.
 
 ```
 text =  "This avenue feels open, bright, and lively with wide sidewalks and beautiful views of the sky."
 
+# Use the updated ChatCompletion API
+response = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[prompt],
+    temperature=0,
+    max_tokens=2
+)
 
 sentiment = response.choices[0].message.content
 print(sentiment)
@@ -162,9 +190,6 @@ The model generates descriptive texts for the street view images that summarize 
 
 
 --- 
-- The system takes a text input about description of street view images from the user.
-- The text is sent to the LLM with a carefully designed prompt asking the model to analyze its sentiment.
-- The model returns a result classifying the input as positive, negative, or neutral, along with a brief summary.
 
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Pearl_Street_and_Wall_Street%2C_Manhattan%2C_New_York.jpg/640px-Pearl_Street_and_Wall_Street%2C_Manhattan%2C_New_York.jpg" width="220" height="220"/>
@@ -196,7 +221,10 @@ plt.imshow(img)
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/At_New_York_City_2023_033.jpg/640px-At_New_York_City_2023_033.jpg" width="200" height="200"/>
 
 
+
 ### Ask the model to describe what it sees
+
+The model generates descriptive text based on the imagined content.
 
 ``` Python
 from llama_index.core.llms import (
@@ -227,3 +255,8 @@ async for delta in async_resp:
 `1. A narrow city street lined with tall buildings on both sides. The road has "STOP" painted on it, and there are a few pedestrians walking on the sidewalk. Several cars are parked along the street, and American flags are visible on the right side.`
 
 `2. A wide city street with tall brick buildings on both sides. The street is busy with cars and pedestrians, and the sky is overcast with clouds. The buildings have multiple stories, and the street is lined with trees and traffic lights.`
+
+# Conclusion
+By utilizing Large Language Models (LLMs) for sentiment analysis and image reasoning, this project demonstrates the potential of AI to interpret human emotional responses to urban environments. Through analyzing street views in New York City, we can better understand how different urban designs influence public sentiment. These insights offer valuable guidance for creating more emotionally engaging and human-centered urban spaces.
+
+
