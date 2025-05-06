@@ -2,14 +2,31 @@
 
 # Final project- MUSA 6950
 
+## Table of Contents
+
+<details>
+
+   <summary>Contents</summary>
+
+1. [What is LLMs?](#what-is-llms)
+1. [Project summary](#project-summary)
+1. [Objectives](#objectives)
+1. [Obtain API key](#obtain-api-key)
+   1. [Limitation](#limitation)
+1. [Task 1: Sentiment Analysis](#task-1-sentiment-analysis)
+   1. [Function to generate summary and sentiment analysis](#function-to-generate-summary-and-sentiment-analysis)
+      1. [Example usage](#example-usage)
+   1. [Use the Sentiment Score in Your Code](#use-the-sentiment-score-in-your-code)
+1. [Image-Related Reasoning](#image-related-reasoning)
+   1. [Load Images from URLs](#load-images-from-urls)
+   1. [Ask the model to describe what it sees](#ask-the-model-to-describe-what-it-sees)
+
+</details>
+
 
 ## What is LLMs?
 
 Large Language Models (LLMs) are advanced artificial intelligence systems designed to understand, generate, and manipulate human language on a large scale.
-
-
-
-  <img src="https://pixelplex.io/wp-content/uploads/2024/01/llm-applications-main.jpg" width="350" height="200"/>
 
  <img src="https://pixelplex.io/wp-content/uploads/2024/01/10-most-popular-applications-of-large-language-models.jpg" width="450" height="300"/>
 
@@ -49,13 +66,6 @@ To obtain the API key, navigate to https://platform.openai.com/account/api-keys.
 ##  Task 1: Sentiment Analysis
 
 This section analyze the sentiment of given text inputs via using GPT-3.5-turbo.
-
-- The system takes a text input from the user.
-- The text is sent to the LLM with a carefully designed prompt asking the model to analyze its sentiment.
-- The model returns a result classifying the input as positive, negative, or neutral, along with a brief summary.
-
----
-
 - Instead of processing Street View image directly, publicly available image URLs are used.
 - Text prompts describing the Street view image URLs are fed into the LLM.
 - The model generates descriptive text based on the imagined content of the images, simulating a simple form of visual reasoning.
