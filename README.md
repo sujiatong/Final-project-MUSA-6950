@@ -8,18 +8,21 @@
 
    <summary>Contents</summary>
 
-1. [What is LLMs?](#what-is-llms)
-1. [Project summary](#project-summary)
-1. [Objectives](#objectives)
-1. [Obtain API key](#obtain-api-key)
-   1. [Limitation](#limitation)
-1. [Task 1: Sentiment Analysis](#task-1-sentiment-analysis)
-   1. [Function to generate summary and sentiment analysis](#function-to-generate-summary-and-sentiment-analysis)
-      1. [Example usage](#example-usage)
-   1. [Use the Sentiment Score in Your Code](#use-the-sentiment-score-in-your-code)
-1. [Image-Related Reasoning](#image-related-reasoning)
-   1. [Load Images from URLs](#load-images-from-urls)
-   1. [Ask the model to describe what it sees](#ask-the-model-to-describe-what-it-sees)
+- [Final project- MUSA 6950](#final-project--musa-6950)
+  - [Table of Contents](#table-of-contents)
+  - [What is LLMs?](#what-is-llms)
+  - [Project summary](#project-summary)
+  - [Objectives](#objectives)
+  - [Obtain API key](#obtain-api-key)
+    - [Limitation](#limitation)
+  - [Task 1: Sentiment Analysis](#task-1-sentiment-analysis)
+    - [Function to generate summary and sentiment analysis](#function-to-generate-summary-and-sentiment-analysis)
+      - [Example usage](#example-usage)
+    - [Use the Sentiment Score in Your Code](#use-the-sentiment-score-in-your-code)
+  - [Image-Related Reasoning](#image-related-reasoning)
+    - [Load Images from URLs](#load-images-from-urls)
+    - [Ask the model to describe what it sees](#ask-the-model-to-describe-what-it-sees)
+- [Conclusion](#conclusion)
 
 </details>
 
@@ -63,8 +66,8 @@ Using LLMs, we can analyze how people feel about different street views in New Y
 The project aims to create a clean, lightweight prototype that highlights the potential of LLMs in both text-based and image-related reasoning tasks.
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Pearl_Street_and_Wall_Street%2C_Manhattan%2C_New_York.jpg/640px-Pearl_Street_and_Wall_Street%2C_Manhattan%2C_New_York.jpg" width="220" height="220"/>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/At_New_York_City_2023_033.jpg/640px-At_New_York_City_2023_033.jpg" width="220" height="220"/>
+  <img src="image/Pearl_Street_and_Wall_Street,_Manhattan,_New_York.jpg" width="220" height="220"/>
+  <img src="image/At_New_York_City_2023_033.jpg" width="220" height="220"/>
 </p>
 
 
